@@ -1,9 +1,9 @@
-// 11.12. Charly. This program contains multiple methods. 
+// 11.12. Charly. This program contains multiple methods.
 import java.util.Scanner;
 public class WhileLoops {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        fromHereToThere();
+        countPosAndNeg();
     }
     public static void fromHereToThere() {
         Scanner input = new Scanner(System.in);
@@ -32,5 +32,22 @@ public class WhileLoops {
                 System.out.print(initial + " ");
             initial ++;
         }
+    }
+    public static void countPosAndNeg(){
+        Scanner input = new Scanner(System.in);
+        int value = 1;
+        int positive = 0;
+        int negative = 0;
+        if (value > 0)
+        while ((value > 0)||(value < 0))
+        {
+            System.out.print("Enter a positive or negative number or 0 to quit: ");
+            value = input.nextInt();
+            if (value < 0)
+                negative ++;
+            if (value > 0)
+                positive ++;
+        }
+        System.out.print("There were "+positive+" positive and "+negative+" negative numbers.");
     }
 }
