@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class WhileLoops {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        countPosAndNeg();
+        findMinAndMax();
     }
     public static void fromHereToThere() {
         Scanner input = new Scanner(System.in);
@@ -49,5 +49,22 @@ public class WhileLoops {
                 positive ++;
         }
         System.out.print("There were "+positive+" positive and "+negative+" negative numbers.");
+    }
+    public static void findMinAndMax(){
+        Scanner input = new Scanner(System.in);
+        int times = 0;
+        int max = -999999999;
+        int min = 999999999;
+        while (times < 5){
+            System.out.print("Number: ");
+            int value = input.nextInt();
+            if (value > max)
+                max = value;
+            if (value < min)
+                min = value;
+            times++;
+        }
+        System.out.println("Max value is: "+max);
+        System.out.print("Min value is: "+min);
     }
 }
