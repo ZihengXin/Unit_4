@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class WhileLoops {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        findMinAndMax();
+        gradePoint();
     }
     public static void fromHereToThere() {
         Scanner input = new Scanner(System.in);
@@ -66,5 +66,33 @@ public class WhileLoops {
         }
         System.out.println("Max value is: "+max);
         System.out.print("Min value is: "+min);
+    }
+    public static void gradePoint(){
+        Scanner input = new Scanner(System.in);
+        int times = 0;
+        /* A = 4.0;
+           B = 3.0;
+           C = 2.0;
+           D = 1.0;
+           F = 0.0; */
+        System.out.println("Enter seven letter grades (A, B, C, D, or F)");
+        double totalScore = 0.0;
+        while (times < 7){
+            String grade = input.next();
+            if (grade.equals("A"))
+                totalScore += 4.0;
+            else if (grade.equals("B"))
+                totalScore += 3.0;
+            else if (grade.equals("C"))
+                totalScore += 2.0;
+            else if (grade.equals("D"))
+                totalScore += 1.0;
+            else if (grade.equals("F"))
+                totalScore += 0;
+            times ++;
+        }
+        double average = (int)(totalScore*100/7+0.5);
+        double gpa = average/100;
+        System.out.print("GPA = "+gpa);
     }
 }
