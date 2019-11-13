@@ -5,12 +5,7 @@ public class WhileLoops {
     public static void main(String[] args) {
         gradePoint();
     }
-    public static void fromHereToThere() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a small number: ");
-        int startNum = input.nextInt();
-        System.out.print("Enter a large number: ");
-        int endNum = input.nextInt();
+    public static String fromHereToThere(int startNum, int endNum) {
         String result;
         int value = startNum;
         if (startNum >= endNum)
@@ -21,10 +16,7 @@ public class WhileLoops {
                 value++;
             }
     }
-    public static void factors() {
-        System.out.print("Enter number X: ");
-        Scanner input = new Scanner(System.in);
-        int X = input.nextInt();
+    public static String factors(int X) {
         int initial = 1;
         System.out.println("The factors of " + X + " are: ");
         while (initial <= X) {
