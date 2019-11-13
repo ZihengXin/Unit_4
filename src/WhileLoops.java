@@ -3,27 +3,29 @@ import java.util.Scanner;
 public class WhileLoops {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        gradePoint();
+        System.out.print(factors(12));
     }
     public static String fromHereToThere(int startNum, int endNum) {
-        String result;
         int value = startNum;
+        String result = "";
         if (startNum >= endNum)
-            result = "Invalid input";
+            return "Invalid input";
         else
             while (value <= endNum) {
-                System.out.print(value + " ");
+                result = value + " ";
                 value++;
             }
+            return result;
     }
     public static String factors(int X) {
         int initial = 1;
-        System.out.println("The factors of " + X + " are: ");
+        String outcome = "";
         while (initial <= X) {
             if (X % initial == 0)
-                System.out.print(initial + " ");
+                outcome += initial + " ";
             initial ++;
         }
+        return "The factors of " + X + " are: "+outcome;
     }
     public static void countPosAndNeg(){
         Scanner input = new Scanner(System.in);
