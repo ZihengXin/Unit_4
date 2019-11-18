@@ -27,7 +27,7 @@ public class WhileLoops {
         }
         return "The factors of " + X + " are: "+outcome;
     }
-    public static void countPosAndNeg(){
+    public static String countPosAndNeg(){
         Scanner input = new Scanner(System.in);
         int value = 1;
         int positive = 0;
@@ -42,9 +42,9 @@ public class WhileLoops {
             if (value > 0)
                 positive ++;
         }
-        System.out.print("There were "+positive+" positive and "+negative+" negative numbers.");
+        return "There were "+positive+" positive and "+negative+" negative numbers.";
     }
-    public static void findMinAndMax(){
+    public static String findMinAndMax(){
         Scanner input = new Scanner(System.in);
         int times = 0;
         int max = -999999999;
@@ -58,10 +58,9 @@ public class WhileLoops {
                 min = value;
             times++;
         }
-        System.out.println("Max value is: "+max);
-        System.out.print("Min value is: "+min);
+        return "Max value is: "+max + "\nMin value is: "+min;
     }
-    public static void gradePoint(){
+    public static double gradePoint(){
         Scanner input = new Scanner(System.in);
         int times = 0;
         /* A = 4.0;
@@ -87,6 +86,6 @@ public class WhileLoops {
         }
         double average = (int)(totalScore*100/7+0.5);
         double gpa = average/100;
-        System.out.print("GPA = "+gpa);
+        return gpa;
     }
 }
