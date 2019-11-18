@@ -1,18 +1,17 @@
 // 11.12. Charly. This program contains multiple methods.
 import java.util.Scanner;
 public class WhileLoops {
-    static Scanner scan = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.print(factors(12));
     }
     public static String fromHereToThere(int startNum, int endNum) {
         int value = startNum;
         String result = "";
-        if (startNum >= endNum)
+        if (startNum > endNum)
             return "Invalid input";
         else
             while (value <= endNum) {
-                result = value + " ";
+                result += value + " ";
                 value++;
             }
             return result;
@@ -28,7 +27,6 @@ public class WhileLoops {
         return "The factors of " + X + " are: "+outcome;
     }
     public static String countPosAndNeg(){
-        Scanner input = new Scanner(System.in);
         int value = 1;
         int positive = 0;
         int negative = 0;
@@ -45,7 +43,6 @@ public class WhileLoops {
         return "There were "+positive+" positive and "+negative+" negative numbers.";
     }
     public static String findMinAndMax(){
-        Scanner input = new Scanner(System.in);
         int times = 0;
         int max = -999999999;
         int min = 999999999;
@@ -61,31 +58,33 @@ public class WhileLoops {
         return "Max value is: "+max + "\nMin value is: "+min;
     }
     public static double gradePoint(){
-        Scanner input = new Scanner(System.in);
         int times = 0;
+        String grade = "";
         /* A = 4.0;
            B = 3.0;
            C = 2.0;
            D = 1.0;
            F = 0.0; */
         System.out.println("Enter seven letter grades (A, B, C, D, or F)");
-        double totalScore = 0.0;
+        double Score = 0;
+        double gpa = 0;
         while (times < 7){
-            String grade = input.next();
+            grade = input.next();
             if (grade.equals("A"))
-                totalScore += 4.0;
+                Score = 4.0;
             else if (grade.equals("B"))
-                totalScore += 3.0;
+                Score = 3.0;
             else if (grade.equals("C"))
-                totalScore += 2.0;
+                Score = 2.0;
             else if (grade.equals("D"))
-                totalScore += 1.0;
-            else if (grade.equals("F"))
-                totalScore += 0;
+                Score = 1.0;
+            else //grade.equals("F")
+                Score = 0;
+            gpa += Score;
             times ++;
         }
-        double average = (int)(totalScore*100/7+0.5);
-        double gpa = average/100;
-        return gpa;
+        double average = (int)(gpa*100/7+0.5);
+        double outcome = average/100;
+        return outcome;
     }
 }
