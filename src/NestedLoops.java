@@ -1,4 +1,4 @@
-//12.3 Charly. This program should be able to pass through the NestedLoopsTest.
+//12.4 Charly. This program should be able to pass through the NestedLoopsTest.
 import java.util.Scanner;
 
 public class NestedLoops {
@@ -29,7 +29,7 @@ public class NestedLoops {
     public static String flippedTriangle(int n){
         String str = "";
         for (int a = 1; a <= n; a++){
-            for (int b = n; b >= 1; b--){
+            for (int b = n-a+1; b >= 1; b--){
                 str += "*";
             }
             str += "\n";
@@ -39,7 +39,13 @@ public class NestedLoops {
     public static String multiplicationTable(){
         String str = "";
         for (int a = 1; a <= 9; a ++){
-
+            for (int b = 1; b <= 9; b++){
+                if (b*a >= 10)
+                str += " "+b*a;
+                else
+                    str += "  "+b*a;
+            }
+            str += "\n";
         }
         return str;
     }
